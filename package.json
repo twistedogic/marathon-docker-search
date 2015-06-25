@@ -2,16 +2,16 @@
   "name": "docker-cluster",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "async": "^1.2.1",
     "dockerode": "^2.1.5",
-    "hapi": "^8.6.1",
     "lodash": "^3.9.3",
     "mesos": "^0.7.0",
     "minimist": "^1.1.1"
