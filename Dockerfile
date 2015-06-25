@@ -1,8 +1,8 @@
 FROM google/nodejs:latest
 
 WORKDIR /app
-ONBUILD ADD package.json /app/
-ONBUILD RUN npm install
-ONBUILD ADD . /app
+ADD package.json /app/
+RUN npm install
+ADD . /app
 
-ENTRYPOINT ["/nodejs/bin/node", "app.js]
+ENTRYPOINT ["/nodejs/bin/node", "app.js"]
