@@ -27,7 +27,6 @@ var input = {
     dockerport: argv.d || 4243,
     term: argv._[0] || null
 };
-console.log(input);
 marathon({
     host: input.host,
     port: input.port
@@ -44,7 +43,16 @@ marathon({
             console.log(err);
         } else {
             var output = _.flatten(res);
-            console.log(tablify(output));
+            var key = _.keys(output[0]);
+            var string = [];
+            _.each(output,function(n){
+                var row = [];
+                _.each(key,function(m){
+                    row.push(n[m]);
+                })
+                string.push(row.join(','));
+            })
+            console.log(string.join('\n'));
         }
     })
 })
